@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import { domain, fromNow } from './filters'
 import App from './components/App.vue'
 import NewsView from './components/NewsView.vue'
+import UserView from './components/UserView.vue'
 
 // install router
 Vue.use(Router)
@@ -17,7 +18,10 @@ var router = new Router()
 router.map({
   '/news/:page': {
     component: NewsView
-  }
+  },
+  '/user/:id': {
+    component: UserView
+  },
 })
 
 

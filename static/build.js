@@ -64,6 +64,10 @@
 	
 	var _NewsView2 = _interopRequireDefault(_NewsView);
 	
+	var _UserView = __webpack_require__(61);
+	
+	var _UserView2 = _interopRequireDefault(_UserView);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// install router
@@ -79,6 +83,9 @@
 	router.map({
 	  '/news/:page': {
 	    component: _NewsView2.default
+	  },
+	  '/user/:id': {
+	    component: _UserView2.default
 	  }
 	});
 	
@@ -16005,6 +16012,162 @@
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"news-view\" :class=\"{ loading: !items.length }\">\n  <!-- item list -->\n  <item\n    v-for=\"item in items\"\n    :item=\"item\"\n    :index=\"$index | formatItemIndex\"\n    track-by=\"id\">\n  </item>\n  <!-- navigation -->\n  <div class=\"nav\" v-show=\"items.length > 0\">\n    <a v-if=\"page > 1\" :href=\"'#/news/' + (page - 1)\">&lt; prev</a>\n    <a v-if=\"page < 4\" :href=\"'#/news/' + (page + 1)\">more...</a>\n  </div>\n</div>\n";
+
+/***/ },
+/* 61 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(62)
+	__vue_script__ = __webpack_require__(64)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/UserView.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(65)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./UserView.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 62 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(63);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(9)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./UserView.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./UserView.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(8)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".user-view {\n  color: #828282;\n}\n.user-view li {\n  margin: 5px 0;\n}\n.user-view .label {\n  display: inline-block;\n  min-width: 60px;\n}\n.user-view .about {\n  margin-top: 1em;\n}\n.user-view .links a {\n  text-decoration: underline;\n}\n", "", {"version":3,"sources":["/./src/components/src/components/UserView.vue","/./src/components/UserView.vue"],"names":[],"mappings":"AAiDA;EACE,eAAA;CChDD;ADiDC;EACE,cAAA;CC/CH;ADgDC;EACE,sBAAA;EACA,gBAAA;CC9CH;AD+CC;EACE,gBAAA;CC7CH;AD8CC;EACE,2BAAA;CC5CH","file":"UserView.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n@import \"../variables.styl\"\n\n.user-view\n  color $gray\n  li\n    margin 5px 0\n  .label\n    display inline-block\n    min-width 60px\n  .about\n    margin-top 1em\n  .links a\n    text-decoration underline\n",".user-view {\n  color: #828282;\n}\n.user-view li {\n  margin: 5px 0;\n}\n.user-view .label {\n  display: inline-block;\n  min-width: 60px;\n}\n.user-view .about {\n  margin-top: 1em;\n}\n.user-view .links a {\n  text-decoration: underline;\n}\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 64 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _store = __webpack_require__(15);
+	
+	var _store2 = _interopRequireDefault(_store);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	
+	  name: 'UserView',
+	
+	  data: function data() {
+	    return {
+	      user: {}
+	    };
+	  },
+	
+	
+	  route: {
+	    data: function data(_ref) {
+	      var to = _ref.to;
+	
+	      // Promise sugar syntax: return an object that contains Promise fields.
+	      // http://router.vuejs.org/en/pipeline/data.html#promise-sugar
+	      document.title = 'Profile: ' + to.params.id + ' | Vue.js HN Clone';
+	      return {
+	        user: _store2.default.fetchUser(to.params.id)
+	      };
+	    }
+	  }
+	};
+	// </script>
+	//
+	// <style lang="stylus">
+	// @import "../variables.styl"
+	//
+	// .user-view
+	//   color $gray
+	//   li
+	//     margin 5px 0
+	//   .label
+	//     display inline-block
+	//     min-width 60px
+	//   .about
+	//     margin-top 1em
+	//   .links a
+	//     text-decoration underline
+	// </style>
+
+	/* generated by vue-loader */
+	// <template>
+	//   <div class="user-view" v-show="user">
+	//     <ul>
+	//       <li><span class="label">user:</span> {{user.id}}</li>
+	//       <li><span class="label">created:</span> {{user.created | fromNow}} ago</li>
+	//       <li><span class="label">karma:</span> {{user.karma}}</li>
+	//       <li>
+	//         <span class="label">about:</span>
+	//         <div class="about">
+	//           {{{user.about}}}
+	//         </div>
+	//       </li>
+	//     </ul>
+	//     <p class="links">
+	//       <a :href="'https://news.ycombinator.com/submitted?id=' + user.id">submissions</a><br>
+	//       <a :href="'https://news.ycombinator.com/threads?id=' + user.id">comments</a>
+	//     </p>
+	//   </div>
+	// </template>
+	//
+	// <script>
+
+/***/ },
+/* 65 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"user-view\" v-show=\"user\">\n  <ul>\n    <li><span class=\"label\">user:</span> {{user.id}}</li>\n    <li><span class=\"label\">created:</span> {{user.created | fromNow}} ago</li>\n    <li><span class=\"label\">karma:</span> {{user.karma}}</li>\n    <li>\n      <span class=\"label\">about:</span>\n      <div class=\"about\">\n        {{{user.about}}}\n      </div>\n    </li>\n  </ul>\n  <p class=\"links\">\n    <a :href=\"'https://news.ycombinator.com/submitted?id=' + user.id\">submissions</a><br>\n    <a :href=\"'https://news.ycombinator.com/threads?id=' + user.id\">comments</a>\n  </p>\n</div>\n";
 
 /***/ }
 /******/ ]);
