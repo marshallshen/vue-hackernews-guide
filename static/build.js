@@ -54,7 +54,9 @@
 	
 	var _vueRouter2 = _interopRequireDefault(_vueRouter);
 	
-	var _App = __webpack_require__(4);
+	var _filters = __webpack_require__(4);
+	
+	var _App = __webpack_require__(5);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -62,6 +64,10 @@
 	
 	// install router
 	_vue2.default.use(_vueRouter2.default);
+	
+	// register filters globally
+	_vue2.default.filter('fromNow', _filters.fromNow);
+	_vue2.default.filter('domain', _filters.domain);
 	
 	// routing
 	var router = new _vueRouter2.default();
@@ -13050,11 +13056,48 @@
 
 /***/ },
 /* 4 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.domain = domain;
+	exports.fromNow = fromNow;
+	var urlParser = document.createElement('a');
+	
+	function domain(url) {
+	  urlParser.href = url;
+	  return urlParser.hostname;
+	}
+	
+	function fromNow(time) {
+	  var between = Date.now() / 1000 - Number(time);
+	  if (between < 3600) {
+	    return pluralize(~~(between / 60), ' minute');
+	  } else if (between < 86400) {
+	    return pluralize(~~(between / 3600), ' hour');
+	  } else {
+	    return pluralize(~~(between / 86400), ' day');
+	  }
+	}
+	
+	function pluralize(time, label) {
+	  if (time === 1) {
+	    return time + label;
+	  }
+	
+	  return time + label + 's';
+	}
+
+/***/ },
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(5)
-	__vue_template__ = __webpack_require__(9)
+	__webpack_require__(6)
+	__vue_template__ = __webpack_require__(10)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -13073,16 +13116,16 @@
 	})()}
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(6);
+	var content = __webpack_require__(7);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
+	var update = __webpack_require__(9)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -13099,10 +13142,10 @@
 	}
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(7)();
+	exports = module.exports = __webpack_require__(8)();
 	// imports
 	
 	
@@ -13113,7 +13156,7 @@
 
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports) {
 
 	/*
@@ -13169,7 +13212,7 @@
 
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -13391,7 +13434,7 @@
 
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div id=\"wrapper\">\n  <!-- header -->\n  <div id=\"header\">\n    <a id=\"yc\" href=\"http://www.ycombinator.com\">\n      <img src=\"https://news.ycombinator.com/y18.gif\">\n    </a>\n    <h1><a href=\"#/\">Hacker News</a></h1>\n    <span class=\"source\">\n      Built with <a href=\"http://vuejs.org\" target=\"_blank\">Vue.js</a> |\n      <a href=\"https://github.com/vuejs/vue-hackernews\" target=\"_blank\">Source</a>\n    </span>\n  </div>\n  <!-- main view -->\n  <router-view\n    class=\"view\"\n    keep-alive\n    transition\n    transition-mode=\"out-in\">\n  </router-view>\n</div>\n";
