@@ -64,7 +64,11 @@
 	
 	var _NewsView2 = _interopRequireDefault(_NewsView);
 	
-	var _UserView = __webpack_require__(61);
+	var _ItemView = __webpack_require__(61);
+	
+	var _ItemView2 = _interopRequireDefault(_ItemView);
+	
+	var _UserView = __webpack_require__(71);
 	
 	var _UserView2 = _interopRequireDefault(_UserView);
 	
@@ -86,6 +90,9 @@
 	  },
 	  '/user/:id': {
 	    component: _UserView2.default
+	  },
+	  '/item/:id': {
+	    component: _ItemView2.default
 	  }
 	});
 	
@@ -16023,8 +16030,8 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/UserView.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(65)
+	  console.warn("[vue-loader] src/components/ItemView.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(70)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -16034,7 +16041,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./UserView.vue"
+	  var id = "./ItemView.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -16058,8 +16065,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./UserView.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./UserView.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ItemView.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ItemView.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -16077,13 +16084,367 @@
 	
 	
 	// module
-	exports.push([module.id, ".user-view {\n  color: #828282;\n}\n.user-view li {\n  margin: 5px 0;\n}\n.user-view .label {\n  display: inline-block;\n  min-width: 60px;\n}\n.user-view .about {\n  margin-top: 1em;\n}\n.user-view .links a {\n  text-decoration: underline;\n}\n", "", {"version":3,"sources":["/./src/components/src/components/UserView.vue","/./src/components/UserView.vue"],"names":[],"mappings":"AAiDA;EACE,eAAA;CChDD;ADiDC;EACE,cAAA;CC/CH;ADgDC;EACE,sBAAA;EACA,gBAAA;CC9CH;AD+CC;EACE,gBAAA;CC7CH;AD8CC;EACE,2BAAA;CC5CH","file":"UserView.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n@import \"../variables.styl\"\n\n.user-view\n  color $gray\n  li\n    margin 5px 0\n  .label\n    display inline-block\n    min-width 60px\n  .about\n    margin-top 1em\n  .links a\n    text-decoration underline\n",".user-view {\n  color: #828282;\n}\n.user-view li {\n  margin: 5px 0;\n}\n.user-view .label {\n  display: inline-block;\n  min-width: 60px;\n}\n.user-view .about {\n  margin-top: 1em;\n}\n.user-view .links a {\n  text-decoration: underline;\n}\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".item-view .item {\n  padding-left: 0;\n  margin-bottom: 30px;\n}\n.item-view .item .index {\n  display: none;\n}\n.item-view .poll-options {\n  margin-left: 30px;\n  margin-bottom: 40px;\n}\n.item-view .poll-options li {\n  margin: 12px 0;\n}\n.item-view .poll-options p {\n  margin: 8px 0;\n}\n.item-view .poll-options .subtext {\n  color: #828282;\n  font-size: 11px;\n}\n.item-view .itemtext {\n  color: #828282;\n  margin-top: 0;\n  margin-bottom: 30px;\n}\n.item-view .itemtext p {\n  margin: 10px 0;\n}\n", "", {"version":3,"sources":["/./src/components/src/components/ItemView.vue","/./src/components/ItemView.vue"],"names":[],"mappings":"AA0EE;EACE,gBAAA;EACA,oBAAA;CCzEH;AD0EG;EACE,cAAA;CCxEL;ADyEC;EACE,kBAAA;EACA,oBAAA;CCvEH;ADwEG;EACE,eAAA;CCtEL;ADuEG;EACE,cAAA;CCrEL;ADsEG;EACE,eAAA;EACA,gBAAA;CCpEL;ADqEC;EACE,eAAA;EACA,cAAA;EACA,oBAAA;CCnEH;ADoEC;EACE,eAAA;CClEH","file":"ItemView.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n@import \"../variables.styl\"\n\n.item-view\n  .item\n    padding-left 0\n    margin-bottom 30px\n    .index\n      display none\n  .poll-options\n    margin-left 30px\n    margin-bottom 40px\n    li\n      margin 12px 0\n    p\n      margin 8px 0\n    .subtext\n      color $gray\n      font-size 11px\n  .itemtext\n    color $gray\n    margin-top 0\n    margin-bottom 30px\n  .itemtext p\n    margin 10px 0\n",".item-view .item {\n  padding-left: 0;\n  margin-bottom: 30px;\n}\n.item-view .item .index {\n  display: none;\n}\n.item-view .poll-options {\n  margin-left: 30px;\n  margin-bottom: 40px;\n}\n.item-view .poll-options li {\n  margin: 12px 0;\n}\n.item-view .poll-options p {\n  margin: 8px 0;\n}\n.item-view .poll-options .subtext {\n  color: #828282;\n  font-size: 11px;\n}\n.item-view .itemtext {\n  color: #828282;\n  margin-top: 0;\n  margin-bottom: 30px;\n}\n.item-view .itemtext p {\n  margin: 10px 0;\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
 /* 64 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _store = __webpack_require__(15);
+	
+	var _store2 = _interopRequireDefault(_store);
+	
+	var _Item = __webpack_require__(55);
+	
+	var _Item2 = _interopRequireDefault(_Item);
+	
+	var _Comment = __webpack_require__(65);
+	
+	var _Comment2 = _interopRequireDefault(_Comment);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	
+	  name: 'ItemView',
+	
+	  components: {
+	    Item: _Item2.default,
+	    Comment: _Comment2.default
+	  },
+	
+	  data: function data() {
+	    return {
+	      item: {},
+	      comments: [],
+	      pollOptions: null
+	    };
+	  },
+	
+	
+	  route: {
+	    data: function data(_ref) {
+	      var to = _ref.to;
+	
+	      return _store2.default.fetchItem(to.params.id).then(function (item) {
+	        document.title = item.title + ' | Vue.js HN Clone';
+	        return {
+	          item: item,
+	          // the final resolved data can further contain Promises
+	          comments: _store2.default.fetchItems(item.kids),
+	          pollOptions: item.type === 'poll' ? _store2.default.fetchItems(item.parts) : null
+	        };
+	      });
+	    }
+	  },
+	
+	  computed: {
+	    isJob: function isJob() {
+	      return this.item.type === 'job';
+	    },
+	    hasText: function hasText() {
+	      return this.item.hasOwnProperty('text');
+	    }
+	  }
+	};
+	// </script>
+	//
+	// <style lang="stylus">
+	// @import "../variables.styl"
+	//
+	// .item-view
+	//   .item
+	//     padding-left 0
+	//     margin-bottom 30px
+	//     .index
+	//       display none
+	//   .poll-options
+	//     margin-left 30px
+	//     margin-bottom 40px
+	//     li
+	//       margin 12px 0
+	//     p
+	//       margin 8px 0
+	//     .subtext
+	//       color $gray
+	//       font-size 11px
+	//   .itemtext
+	//     color $gray
+	//     margin-top 0
+	//     margin-bottom 30px
+	//   .itemtext p
+	//     margin 10px 0
+	// </style>
+
+	/* generated by vue-loader */
+	// <template>
+	//   <div class="item-view" v-show="item">
+	//     <item :item="item"></item>
+	//     <p class="itemtext" v-if="hasText" v-html="item.text"></p>
+	//     <ul class="poll-options" v-if="pollOptions">
+	//       <li v-for="option in pollOptions">
+	//         <p>{{option.text}}</p>
+	//         <p class="subtext">{{option.score}} points</p>
+	//       </li>
+	//     </ul>
+	//     <ul class="comments" v-if="comments">
+	//       <comment
+	//         v-for="comment in comments"
+	//         :comment="comment">
+	//       </comment>
+	//     </ul>
+	//     <p v-show="!comments.length && !isJob">No comments yet.</p>
+	//   </div>
+	// </template>
+	//
+	// <script>
+
+/***/ },
+/* 65 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(66)
+	__vue_script__ = __webpack_require__(68)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/Comment.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(69)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./Comment.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 66 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(67);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(9)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Comment.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Comment.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(8)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".comhead {\n  color: #828282;\n  font-size: 11px;\n  margin-bottom: 8px;\n}\n.comhead a {\n  color: #828282;\n}\n.comhead a:hover {\n  text-decoration: underline;\n}\n.comhead .toggle {\n  margin-right: 4px;\n}\n.comment-content {\n  margin: 0 0 16px 24px;\n  word-wrap: break-word;\n}\n.comment-content code {\n  white-space: pre-wrap;\n}\n.child-comments {\n  margin: 8px 0 8px 22px;\n}\n", "", {"version":3,"sources":["/./src/components/src/components/Comment.vue","/./src/components/Comment.vue"],"names":[],"mappings":"AA+CA;EACE,eAAA;EACA,gBAAA;EACA,mBAAA;CC9CD;AD+CC;EACE,eAAA;CC7CH;AD8CG;EACE,2BAAA;CC5CL;AD6CC;EACE,kBAAA;CC3CH;AD6CD;EACE,sBAAA;EACA,sBAAA;CC3CD;AD4CC;EACE,sBAAA;CC1CH;AD4CD;EACE,uBAAA;CC1CD","file":"Comment.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n@import \"../variables.styl\"\n\n.comhead\n  color $gray\n  font-size 11px\n  margin-bottom 8px\n  a\n    color $gray\n    &:hover\n      text-decoration underline\n  .toggle\n    margin-right 4px\n\n.comment-content\n  margin 0 0 16px 24px\n  word-wrap break-word\n  code\n    white-space pre-wrap\n\n.child-comments\n  margin 8px 0 8px 22px\n",".comhead {\n  color: #828282;\n  font-size: 11px;\n  margin-bottom: 8px;\n}\n.comhead a {\n  color: #828282;\n}\n.comhead a:hover {\n  text-decoration: underline;\n}\n.comhead .toggle {\n  margin-right: 4px;\n}\n.comment-content {\n  margin: 0 0 16px 24px;\n  word-wrap: break-word;\n}\n.comment-content code {\n  white-space: pre-wrap;\n}\n.child-comments {\n  margin: 8px 0 8px 22px;\n}\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _store = __webpack_require__(15);
+	
+	var _store2 = _interopRequireDefault(_store);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	
+	  name: 'Comment',
+	
+	  props: {
+	    comment: Object
+	  },
+	
+	  data: function data() {
+	    return {
+	      childComments: [],
+	      open: true
+	    };
+	  },
+	  created: function created() {
+	    var _this = this;
+	
+	    if (this.comment.kids) {
+	      _store2.default.fetchItems(this.comment.kids).then(function (comments) {
+	        _this.childComments = comments;
+	      });
+	    }
+	  }
+	};
+	// </script>
+	//
+	// <style lang="stylus">
+	// @import "../variables.styl"
+	//
+	// .comhead
+	//   color $gray
+	//   font-size 11px
+	//   margin-bottom 8px
+	//   a
+	//     color $gray
+	//     &:hover
+	//       text-decoration underline
+	//   .toggle
+	//     margin-right 4px
+	//
+	// .comment-content
+	//   margin 0 0 16px 24px
+	//   word-wrap break-word
+	//   code
+	//     white-space pre-wrap
+	//
+	// .child-comments
+	//   margin 8px 0 8px 22px
+	// </style>
+
+	/* generated by vue-loader */
+	// <template>
+	//   <li v-show="comment.text">
+	//     <div class="comhead">
+	//       <a class="toggle" @click="open = !open">{{open ? '[-]' : '[+]'}}</a>
+	//       <a :href="'#/user/' + comment.by">{{comment.by}}</a>
+	//       {{comment.time | fromNow}} ago
+	//     </div>
+	//     <p class="comment-content" v-show="open">
+	//       {{{comment.text}}}
+	//     </p>
+	//     <ul class="child-comments" v-if="comment.kids" v-show="open">
+	//       <comment v-for="comment in childComments" :comment="comment"></comment>
+	//     </ul>
+	//   </li>
+	// </template>
+	//
+	// <script>
+
+/***/ },
+/* 69 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<li v-show=\"comment.text\">\n  <div class=\"comhead\">\n    <a class=\"toggle\" @click=\"open = !open\">{{open ? '[-]' : '[+]'}}</a>\n    <a :href=\"'#/user/' + comment.by\">{{comment.by}}</a>\n    {{comment.time | fromNow}} ago\n  </div>\n  <p class=\"comment-content\" v-show=\"open\">\n    {{{comment.text}}}\n  </p>\n  <ul class=\"child-comments\" v-if=\"comment.kids\" v-show=\"open\">\n    <comment v-for=\"comment in childComments\" :comment=\"comment\"></comment>\n  </ul>\n</li>\n";
+
+/***/ },
+/* 70 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"item-view\" v-show=\"item\">\n  <item :item=\"item\"></item>\n  <p class=\"itemtext\" v-if=\"hasText\" v-html=\"item.text\"></p>\n  <ul class=\"poll-options\" v-if=\"pollOptions\">\n    <li v-for=\"option in pollOptions\">\n      <p>{{option.text}}</p>\n      <p class=\"subtext\">{{option.score}} points</p>\n    </li>\n  </ul>\n  <ul class=\"comments\" v-if=\"comments\">\n    <comment\n      v-for=\"comment in comments\"\n      :comment=\"comment\">\n    </comment>\n  </ul>\n  <p v-show=\"!comments.length && !isJob\">No comments yet.</p>\n</div>\n";
+
+/***/ },
+/* 71 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(72)
+	__vue_script__ = __webpack_require__(74)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src/components/UserView.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(75)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./UserView.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 72 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(73);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(9)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./UserView.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./UserView.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 73 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(8)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".user-view {\n  color: #828282;\n}\n.user-view li {\n  margin: 5px 0;\n}\n.user-view .label {\n  display: inline-block;\n  min-width: 60px;\n}\n.user-view .about {\n  margin-top: 1em;\n}\n.user-view .links a {\n  text-decoration: underline;\n}\n", "", {"version":3,"sources":["/./src/components/src/components/UserView.vue","/./src/components/UserView.vue"],"names":[],"mappings":"AAiDA;EACE,eAAA;CChDD;ADiDC;EACE,cAAA;CC/CH;ADgDC;EACE,sBAAA;EACA,gBAAA;CC9CH;AD+CC;EACE,gBAAA;CC7CH;AD8CC;EACE,2BAAA;CC5CH","file":"UserView.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n@import \"../variables.styl\"\n\n.user-view\n  color $gray\n  li\n    margin 5px 0\n  .label\n    display inline-block\n    min-width 60px\n  .about\n    margin-top 1em\n  .links a\n    text-decoration underline\n",".user-view {\n  color: #828282;\n}\n.user-view li {\n  margin: 5px 0;\n}\n.user-view .label {\n  display: inline-block;\n  min-width: 60px;\n}\n.user-view .about {\n  margin-top: 1em;\n}\n.user-view .links a {\n  text-decoration: underline;\n}\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16164,7 +16525,7 @@
 	// <script>
 
 /***/ },
-/* 65 */
+/* 75 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"user-view\" v-show=\"user\">\n  <ul>\n    <li><span class=\"label\">user:</span> {{user.id}}</li>\n    <li><span class=\"label\">created:</span> {{user.created | fromNow}} ago</li>\n    <li><span class=\"label\">karma:</span> {{user.karma}}</li>\n    <li>\n      <span class=\"label\">about:</span>\n      <div class=\"about\">\n        {{{user.about}}}\n      </div>\n    </li>\n  </ul>\n  <p class=\"links\">\n    <a :href=\"'https://news.ycombinator.com/submitted?id=' + user.id\">submissions</a><br>\n    <a :href=\"'https://news.ycombinator.com/threads?id=' + user.id\">comments</a>\n  </p>\n</div>\n";
